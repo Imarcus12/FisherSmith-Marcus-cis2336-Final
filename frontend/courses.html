@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+
+<body onload="loadEnrollmentOptions()">
+
+    <nav>
+        <a href="index.html">Students</a> |
+        <a href="courses.html">Courses</a>
+    </nav>
+
+    <h1>Add a Course</h1>
+
+    <form id="courseForm" onsubmit="addCourse(event)">
+        <label for="classId">Class ID:</label>
+        <input type="text" id="classId" required>
+        <br>
+
+        <label for="className">Class Name:</label>
+        <input type="text" id="className" required>
+        <br>
+
+        <button type="submit">Add Course</button>
+    </form>
+
+
+    <h1>Courses List</h1>
+
+    <button type="button" onclick="listCourses()">List Courses</button>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Class ID</th>
+                <th>Class Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="courseTable">
+        </tbody>
+    </table>
+
+
+    <h1>Enroll Student in Course</h1>
+
+    <form id="enrollmentForm" onsubmit="addEnrollment(event)">
+
+        <label for="studentSelect">Select Student:</label>
+        <select id="studentSelect" required>
+            <option value="">-- Select Student --</option>
+        </select>
+
+        <br>
+
+        <label for="courseSelect">Select Course:</label>
+        <select id="courseSelect" required>
+            <option value="">-- Select Course --</option>
+        </select>
+
+        <br>
+
+        <button type="submit">Enroll Student</button>
+
+    </form>
+
+
+    <h1>Students in Course</h1>
+
+    <label for="enrollmentCourseSelect">Select Course:</label>
+
+    <select id="enrollmentCourseSelect">
+        <option value="">-- Select Course --</option>
+    </select>
+
+    <button type="button" onclick="listStudentsInCourse()">
+        List Students
+    </button>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Phone</th>
+                <th>Zip</th>
+            </tr>
+        </thead>
+
+        <tbody id="enrollmentTable">
+        </tbody>
+    </table>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
